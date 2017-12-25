@@ -10,4 +10,9 @@ class GetGooglePlayServicePage(BasePage):
         super(GetGooglePlayServicePage, self).__init__(driver, self.get_google_play_service)
 
     def skip(self):
+        """
+        Skip google play service pop up.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         self.click_back_button()

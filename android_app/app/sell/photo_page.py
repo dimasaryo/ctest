@@ -14,6 +14,12 @@ class PhotoPage(BasePage):
         super(PhotoPage, self).__init__(driver, self.photo)
 
     def choose_photo(self, *args):
+        """
+        Choose photo
+        
+        :param args: photo index.
+        :return: PASSED or WebdriverException raised.
+        """
         for _, arg in enumerate(args):
             photo_element = construct_locator(PhotoPageElement.PHOTO, int(arg) + 1)
             photo = Button(self.driver, photo_element)
@@ -21,4 +27,9 @@ class PhotoPage(BasePage):
         return PASSED
 
     def click_next_button(self):
+        """
+        Click next button.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         return self.next_button.click()

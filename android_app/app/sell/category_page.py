@@ -12,9 +12,22 @@ class CategoryPage(BasePage):
         super(CategoryPage, self).__init__(driver, self.search_field)
 
     def search(self, category):
+        """
+        Search category
+        
+        :param category: Category.
+        :return: PASSED or WebdriverException raised.
+        """
         return self.search_field.set_text(category)
 
     def choose_category(self, category, sub_category):
+        """
+        Choose category.
+        
+        :param category: Category.
+        :param sub_category: Sub Category.
+        :return: PASSED or WebdriverException raised.
+        """
         category_element = construct_locator(CategoryPageElement.CATEGORY, category)
         category = Button(self.driver, category_element)
         category.click()

@@ -10,6 +10,11 @@ class StartupPage(BasePage):
         super(StartupPage, self).__init__(driver, self.login_button)
 
     def open_login_page(self):
+        """
+        Open login page.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         self.login_button.click()
 
 

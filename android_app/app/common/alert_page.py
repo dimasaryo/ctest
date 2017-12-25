@@ -10,4 +10,9 @@ class AlertPage(BasePage):
         super(AlertPage, self).__init__(driver, self.ok_button)
 
     def dismiss(self):
+        """
+        Dismiss alert.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         return self.ok_button.click()

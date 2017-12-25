@@ -24,10 +24,22 @@ class TestSell(BaseAndroidAppTest):
         super(TestSell, self).tearDown()
 
     def test_listing_valid_item(self):
+        """
+        Test listing with valid item.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         for data in SellInput.listing_input.items():
             self.listing_valid_item(data[1][0], data[1][1])
 
     def listing_valid_item(self, user, item_detail):
+        """
+        Listing valid item.
+        
+        :param user: Username and password.
+        :param item_detail: Item detail.
+        :return: PASSED or WebdriverException raised.
+        """
         alert_page = AlertPage(self.driver)
         alert_page.dismiss()
         startup_page = StartupPage(self.driver)
@@ -72,7 +84,7 @@ class TestSell(BaseAndroidAppTest):
         category_collection_page.change_filter()
 
         filter_and_sort_page = FilterAndSortPage(self.driver)
-        filter_and_sort_page.choose_filter(SortBy.recent)
+        filter_and_sort_page.choose_sorting_method(SortBy.recent)
         filter_and_sort_page.apply()
 
         category_collection_page = CategoryCollectionPage(self.driver)

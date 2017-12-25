@@ -10,4 +10,9 @@ class PostListingPage(BasePage):
         super(PostListingPage, self).__init__(driver, self.close_button)
 
     def click_may_be_next_time_button(self):
+        """
+        Click may be next time button.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         return self.close_button.click()
