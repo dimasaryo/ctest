@@ -9,6 +9,8 @@ setup(name='ctest',
       license='MIT',
       packages=['ctest'],
       install_requires=[
-            'selenium'
+            'selenium',
+            'money',
+            'babel'
       ],
       zip_safe=False)
