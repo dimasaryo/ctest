@@ -23,7 +23,7 @@ class BaseTest(unittest.TestCase):
         """
         super(BaseTest, self).setUp()
         try:
-            self.get_driver()
+            self.driver = self.get_driver()
             self.driver.launch_app()
         except WebDriverException:
             self.cleanup_driver()
@@ -67,7 +67,7 @@ class BaseTest(unittest.TestCase):
         if TestConfig['platform'] == Platform['android'] or \
                 TestConfig['platform'] == Platform['ios'] or \
                 TestConfig['platform'] == Platform['mobile_web']:
-            self.driver = appium_driver.Remote(
+            return appium_driver.Remote(
                 command_executor=TestConfig['remote_url'],
                 desired_capabilities=TestConfig['caps']
             )

@@ -19,6 +19,6 @@ class SellInput(object):
         'sub_category': 'Others'
     }
 
-    listing_input = {
-        'positive_test_listing_valid_item': [valid_user, item_detail]
-    }
+    listing_input = [
+        ('positive_test_listing_valid_item', valid_user, item_detail)
+    ]
