@@ -18,5 +18,6 @@ TestConfig = {
     'remove_app': 'False',
     'currency': 'IDR',
     'locale': 'en_US',
-    'currency_format': u'¤ #,##0'
+    'currency_format': u'¤ #,##0',
+    'max_swipe': 3
 }

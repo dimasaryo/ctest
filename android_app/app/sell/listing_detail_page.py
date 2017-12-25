@@ -28,6 +28,20 @@ class ListingDetailPage(BasePage):
     def fill_out_form(self, title=None, price=None, item_condition=None, meet_up=False,
                       preferred_location=None, meet_up_detail=None, mailing_and_delivery=False,
                       mailing_detail=None, description=None):
+        """
+        Fill out listing form.
+        
+        :param title: Title.
+        :param price: Price.
+        :param item_condition: Item condition.
+        :param meet_up: Met_up.
+        :param preferred_location: Preferred location.
+        :param meet_up_detail: meet up detail.
+        :param mailing_and_delivery: Mailing and delivery.
+        :param mailing_detail: Mailing detail.
+        :param description: Description.
+        :return: 
+        """
         if title is not None:
             self.title_field.set_text(title)
         if price is not None:
@@ -45,6 +59,12 @@ class ListingDetailPage(BasePage):
         return PASSED
 
     def choose_item_condition(self, value):
+        """
+        Choose item condition.
+        
+        :param value: value.
+        :return: 
+        """
         if value == ItemCondition.new:
             return self.new_radio_button.click()
         if value == ItemCondition.used:
@@ -53,14 +73,32 @@ class ListingDetailPage(BasePage):
             raise WebDriverException('Invalid value {0}'.format(value))
 
     def fill_out_meet_up_detail(self, preferred_location=None, meet_up_detail=None):
+        """
+        Fill out meet up detail.
+        
+        :param preferred_location: 
+        :param meet_up_detail: 
+        :return: 
+        """
         if preferred_location is not None:
             pass
         if meet_up_detail is not None:
             return self.meet_up_detail_field.set_text(meet_up_detail)
 
     def fill_out_mailing_detail(self, mailing_detail=None):
+        """
+        Fill out mailing detail.
+        
+        :param mailing_detail: 
+        :return: 
+        """
         if mailing_detail is not None:
             return self.mailing_detail_field.set_text(mailing_detail)
 
     def click_list_it_button(self):
+        """
+        Click list it button.
+        
+        :return: 
+        """
         return self.list_it_button.click()

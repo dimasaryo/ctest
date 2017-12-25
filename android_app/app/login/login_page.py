@@ -13,6 +13,13 @@ class LoginPage(BasePage):
         super(LoginPage, self).__init__(driver, self.username_field)
 
     def login(self, username, password):
+        """
+        Login.
+        
+        :param username: Username.
+        :param password: Password.
+        :return: 
+        """
         self.username_field.set_text(username)
         self.password_field.set_text(password)
         return self.login_button.click()

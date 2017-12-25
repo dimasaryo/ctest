@@ -15,8 +15,18 @@ class CollectionPage(BasePage):
         super(CollectionPage, self).__init__(driver, self.sell_button)
 
     def open_sell_form(self):
+        """
+        Click sell button.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         return self.sell_button.click()
 
     def open_everything_else_category(self):
+        """
+        Open 'Everything Else' category.
+        
+        :return: PASSED or WebdriverException raised.
+        """
         return self.everything_else_category.click()
 
