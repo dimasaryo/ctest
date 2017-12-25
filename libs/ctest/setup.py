@@ -10,6 +10,8 @@ setup(name='ctest',
       packages=['ctest'],
       install_requires=[
             'selenium',
+            'Appium-Python-Client',
+            'nose2',
             'money',
             'babel'
       ],

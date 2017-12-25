@@ -1,3 +1,4 @@
+from nose2.tools.params import params
 from ctest.functional_test.constants import PASSED
 from android_app.tests.base_android_app_test import BaseAndroidAppTest
 from android_app.app.common.alert_page import AlertPage
@@ -23,16 +24,8 @@ class TestSell(BaseAndroidAppTest):
     def tearDown(self):
         super(TestSell, self).tearDown()
 
-    def test_listing_valid_item(self):
-        """
-        Test listing with valid item.
-        
-        :return: PASSED or WebdriverException raised.
-        """
-        for data in SellInput.listing_input.items():
-            self.listing_valid_item(data[1][0], data[1][1])
-
-    def listing_valid_item(self, user, item_detail):
+    @params(*SellInput.listing_input)
+    def test_listing_valid_item(self, test_name, user, item_detail):
         """
         Listing valid item.
         
